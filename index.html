@@ -3,44 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oráculo System | Office</title>
-    <style>
-        :root { --fundo: #0a192f; --azul: #007bff; --ouro: #d4af37; --texto: #e6f1ff; }
-        body { background: var(--fundo); color: var(--texto); font-family: sans-serif; margin: 0; text-align: center; }
-        nav { padding: 20px; border-bottom: 1px solid var(--azul); display: flex; justify-content: space-around; }
-        .hero { padding: 80px 20px; }
-        h1 { font-size: 2.5rem; color: var(--ouro); }
-        .gold { color: var(--ouro); font-weight: bold; }
-        .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px; }
-        .card { background: #112240; border: 1px solid var(--azul); padding: 20px; border-radius: 10px; width: 300px; }
-        .badge { background: #28a745; color: white; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; }
-        .btn { display: inline-block; padding: 15px 30px; border: 2px solid var(--ouro); color: var(--ouro); text-decoration: none; margin-top: 30px; font-weight: bold; }
-    </style>
+    <title>Oráculo Inteligência | Engenharia de Software</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
-    <nav>
-        <span>ORÁCULO SYSTEM</span>
-        <a href="mailto:office.oraculo.system@gmail.com" style="color:var(--azul)">CONTATO</a>
+
+    <nav class="navbar">
+        <div class="logo">ORÁCULO <span>INTELIGÊNCIA</span></div>
+        <div class="nav-links">
+            <a href="#servicos">Serviços</a>
+            <a href="#metodo">Nosso Método</a>
+            <a href="mailto:contato.oraculo.system@gmail.com" class="btn-contato">Contato</a>
+        </div>
     </nav>
-    <div class="hero">
-        <h1>Máquinas de Venda <span style="color:white">Substituindo</span> Sites Sem Vida.</h1>
-        <p>Pegamos o seu "site panfleto" e aplicamos engenharia de agendamento e conversão.</p>
-        <a href="mailto:office.oraculo.system@gmail.com" class="btn">SOLICITAR ANÁLISE DE VIABILIDADE</a>
-    </div>
-    <div class="container">
+
+    <header class="hero">
+        <h1>Engenharia de Software para tornar sua empresa <span>Notável.</span></h1>
+        <p>Não fazemos apenas sites. Construímos ferramentas que o seu negócio precisa para dominar o mundo digital com autonomia e inteligência.</p>
+        <div class="hero-btns">
+            <a href="mailto:contato.oraculo.system@gmail.com" class="btn-primary">Solicitar Orçamento</a>
+        </div>
+    </header>
+
+    <section id="servicos" class="features">
         <div class="card">
-            <span class="badge">SUCESSO</span>
-            <h3>Revitalização de Hub</h3>
-            <p>Implementação de menus inteligentes e sistema de reserva para setor de serviços. [Caso: Cliente Satisfeito]</p>
+            <h3>Desenvolvimento Web Evolutivo</h3>
+            <p>Pegamos sites sem conteúdo ou antigos e criamos protótipos avançados com novas funções e menus inteligentes.</p>
         </div>
         <div class="card">
-            <h3>Agendamento Smart</h3>
-            <p>Sistemas autônomos que organizam sua agenda 24/7 sem intervenção humana.</p>
+            <h3>Módulos de Autonomia</h3>
+            <p>Sistemas de agendamento, dashboards financeiros e automação de planilhas. O controle total na sua mão.</p>
         </div>
-    </div>
-    <footer style="margin-top:50px; padding: 20px; font-size: 0.8rem; color: #8892b0;">
-        Developed by Oráculo System & Crispim | 2026
+        <div class="card">
+            <h3>Presença Digital Intelectual</h3>
+            <p>Analisamos e melhoramos o marketing digital através de engenharia social e tecnologia, tornando sua empresa respeitada.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 Oráculo Inteligência | Desenvolvido por <strong>Crispim & Oráculo</strong></p>
+        <p class="email-info">Office: office.oraculosystem@gmail.com | Propostas: contato.oraculo.system@gmail.com</p>
     </footer>
+
 </body>
 </html>
 
