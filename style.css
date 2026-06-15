@@ -6,90 +6,41 @@
     --text-dim: #94a3b8;
 }
 
-* { margin: 0; padding: 0; box-box: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var(--deep-blue);
-    font-family: 'Inter', -apple-system, sans-serif;
+    background: linear-gradient(135deg, #0b1121 0%, #172554 100%);
+    font-family: 'Inter', sans-serif;
     color: var(--text-white);
     line-height: 1.7;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5rem 8%;
-    background: rgba(11, 17, 33, 0.9);
-    position: sticky;
-    top: 0;
-    border-bottom: 1px solid #1e293b;
-}
+/* Ajustes da Nav */
+nav { display: flex; justify-content: space-between; padding: 2rem 8%; }
+.brand { font-weight: 900; font-size: 1.6rem; }
+.brand span { color: var(--gold-action); }
 
-.brand { font-weight: 800; font-size: 1.4rem; letter-spacing: 1px; }
-.brand span { color: var(--office-blue); }
+/* Hero Section */
+.hero-business { padding: 80px 8%; }
+.hero-business h1 { font-size: 3.5rem; margin-bottom: 20px; }
+.hero-business h1 span { color: var(--gold-action); }
 
-nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
-nav ul li a { color: var(--text-white); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-nav ul li a:hover { color: var(--gold-action); }
-
-.hero-business {
-    padding: 100px 8% 60px;
-    text-align: left;
-    background: radial-gradient(circle at top right, #1e3a8a22, transparent);
-}
-
-.hero-business h1 { font-size: 3.5rem; max-width: 900px; margin-bottom: 1.5rem; line-height: 1.1; }
-.hero-business h1 span { color: var(--office-blue); }
-
-.hero-business p {
-    font-size: 1.2rem;
-    color: var(--text-dim);
-    max-width: 700px;
-    margin-bottom: 2.5rem;
-}
-
+/* Botão de Destaque */
 .btn-main {
-    background: var(--office-blue);
-    color: white;
-    padding: 18px 35px;
+    background: var(--gold-action);
+    color: var(--deep-blue);
+    padding: 20px 40px;
+    font-weight: 800;
+    text-transform: uppercase;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
+    border-radius: 5px;
     display: inline-block;
-    transition: 0.4s;
 }
 
-.btn-main:hover {
-    background: #2563eb;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
+/* Cards de Serviço */
+.grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 40px 8%; }
+.service-card { background: rgba(255,255,255,0.05); padding: 40px; border-radius: 10px; border: 1px solid #1e293b; }
+.service-card:hover { border: 1px solid var(--gold-action); }
 
-.badge { margin-left: 15px; font-size: 0.8rem; color: var(--gold-action); border: 1px solid var(--gold-action); padding: 5px 10px; border-radius: 20px; }
-
-.grid-services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 60px 8%;
-}
-
-.service-card {
-    background: #0f172a;
-    padding: 40px;
-    border: 1px solid #1e293b;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.service-card:hover { border-color: var(--office-blue); }
-.service-card .icon { font-size: 2rem; margin-bottom: 15px; }
-
-footer {
-    border-top: 1px solid #1e293b;
-    padding: 40px 8%;
-    text-align: center;
-    color: var(--text-dim);
-    font-size: 0.85rem;
-}
-
+/* Footer Estilizado */
+footer { padding: 60px 8%; text-align: center; border-top: 1px solid #1e293b; margin-top: 50px; }
