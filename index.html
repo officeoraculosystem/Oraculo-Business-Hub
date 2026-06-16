@@ -3,51 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ofício Oráculo System | Engenharia e Automação</title>
+    <title>Oráculo Business Hub | GYN</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <div class="brand">OFÍCIO <span>ORÁCULO SYSTEM</span></div>
-        <ul>
-            <li><a href="#demos">Modelos</a></li>
-            <li><a href="mailto:contato.oraculo.system@gmail.com">Contato</a></li>
-        </ul>
-    </nav>
+    <nav class="nav-container" id="folderNav"></nav>
+    <main id="mainContent" class="container"></main>
 
-    <header class="hero-business">
-        <h1>Não criamos apenas sites. <span>Construímos máquinas de lucro.</span></h1>
-        <p>Desenvolvemos soluções do zero. Do agendamento automático à gestão financeira inteligente. Sua empresa não precisa de um site, precisa de um sistema que trabalhe por você 24/7.</p>
-        <a href="mailto:contato.oraculo.system@gmail.com" class="btn-main">Quero transformar minha empresa</a>
-    </header>
+    <script>
+        // Objeto Central de Configuração (JSON de Nichos)
+        const oraculoNiches = {
+            "Principal": { cor: "#FFD700", items: ["Site Profissional", "Sistema SaaS", "Marketing Digital"] },
+            "Restaurante": { cor: "#007bff", items: ["Prato do Dia", "Marmitex", "Refrigerante", "Sucos"] },
+            "Pastelaria": { cor: "#dc3545", items: ["Pastel de Carne", "Queijo", "Especial", "Caldo de Cana"] },
+            "Jantinha": { cor: "#ffc107", items: ["Espetinho", "Tropeiro", "Refrigerante", "Combo"] },
+            "Pit Dog": { cor: "#ff5722", items: ["X-Tudo", "Sanduíche", "Bebidas", "Adicionais"] },
+            "Ar-Condicionado": { cor: "#17a2b8", items: ["Limpeza Técnica", "Instalação", "Manutenção"] },
+            "Piscina": { cor: "#28a745", items: ["Limpeza Geral", "Tratamento Químico", "Aspiração"] },
+            "Jardinagem": { cor: "#5d4037", items: ["Corte de Grama", "Poda", "Paisagismo"] },
+            "Pedreiro": { cor: "#6c757d", items: ["Reforma", "Assentamento", "Pintura"] },
+            "Estética Auto": { cor: "#343a40", items: ["Lavagem Técnica", "Proteção", "Higienização"] },
+            "Borracharia": { cor: "#212529", items: ["Troca de Pneu", "Reparo", "Balanceamento"] },
+            "Barbearia": { cor: "#000000", items: ["Corte", "Barba", "Design"] },
+            "Nail Design": { cor: "#e83e8c", items: ["Alongamento", "Manicure", "Pedicure"] },
+            "Marketing": { cor: "#6f42c1", items: ["Gestão Redes", "Tráfego Pago", "Design"] }
+        };
 
-    <section id="demos" class="portfolio-section">
-        <h2 class="section-title">Modelos de Demonstração</h2>
-        <div class="grid-portfolio">
-            <div class="portfolio-card">
-                <h3>01. Estética Pro Automotiva</h3>
-                <p>Sistema focado em agendamento de serviços, controle de horários e CRM para fidelização de clientes.</p>
-                <div class="demo-tag">Disponível para deploy</div>
-            </div>
-            <div class="portfolio-card">
-                <h3>02. Gestão Financeira Hub</h3>
-                <p>Dashboard robotizado para acompanhamento de métricas, capital e fluxo de caixa em tempo real.</p>
-                <div class="demo-tag">Disponível para deploy</div>
-            </div>
-            <div class="portfolio-card">
-                <h3>03. Conversão de Leads</h3>
-                <p>Landing page de alta performance desenhada para transformar visitantes em contratos assinados.</p>
-                <div class="demo-tag">Disponível para deploy</div>
-            </div>
-        </div>
-    </section>
+        function render(nicho) {
+            const data = oraculoNiches[nicho];
+            document.body.style.setProperty('--primary-color', data.cor);
+            
+            const main = document.getElementById('mainContent');
+            main.innerHTML = `<h1>${nicho.toUpperCase()}</h1>` + 
+                data.items.map(item => `
+                    <div class="card">
+                        <h3>${item}</h3>
+                        <a href="mailto:contato.oraculo.system@gmail.com?subject=Orçamento: ${nicho} - ${item}" class="btn-order">Solicitar Orçamento</a>
+                    </div>`).join('');
+        }
 
-    <footer>
-        <p><strong>Ofício Oráculo System</strong> | Engenharia e Automação Digital</p>
-        <p>Desenvolvido por <strong>Crispim</strong> | Transformando negócios em sistemas inteligentes.</p>
-        <p><a href="mailto:contato.oraculo.system@gmail.com" class="footer-link">Solicitar Análise Técnica Gratuita</a></p>
-    </footer>
-
+        const nav = document.getElementById('folderNav');
+        Object.keys(oraculoNiches).forEach(nicho => {
+            nav.innerHTML += `<div class="folder-tab" onclick="render('${nicho}')">${nicho}</div>`;
+        });
+        
+        render("Principal"); // Inicializa na aba Principal
+    </script>
 </body>
 </html>
